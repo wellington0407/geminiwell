@@ -4,7 +4,6 @@ const chatHistory = document.getElementById("chat-history");
 const hugButton = document.getElementById("hug-button");
 const clearButton = document.getElementById("clear-button");
 
-// Função para enviar mensagem para a API Gemini usando o formato cURL fornecido
 function sendMessageToAPI(message) {
   const apiKey = "SEU-TOKEN";
   const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + apiKey;
@@ -28,8 +27,7 @@ function sendMessageToAPI(message) {
   })
   .then(response => response.json())
   .then(data => {
-    console.log(data); // Adicione esta linha para ver o que está sendo retornado pela API
-    // Extraindo texto da resposta
+    console.log(data); 
     const botResponse = data.candidates[0].content.parts[0].text;
     displayMessage(botResponse, "bot-message");
   })
@@ -39,7 +37,6 @@ function sendMessageToAPI(message) {
   });
 }
 
-// Função para exibir mensagem no chat
 function displayMessage(message, type) {
   const messageElement = document.createElement("div");
   messageElement.classList.add("message", type);
@@ -48,18 +45,15 @@ function displayMessage(message, type) {
   chatHistory.scrollTop = chatHistory.scrollHeight; 
 }
 
-// Função para limpar o histórico do chat
 function clearChatHistory() {
   chatHistory.innerHTML = ""; 
 }
 
-// Função para enviar um abraço
 function sendHug() {
   const hugMessage = "Você é importante e merece todo amor do mundo! 🤗";
   displayMessage(hugMessage, "bot-message");
 }
 
-// Evento para clique no botão "Enviar"
 sendButton.addEventListener("click", () => {
   const userMessage = userInput.value;
   displayMessage(userMessage, "user-message");
@@ -67,17 +61,14 @@ sendButton.addEventListener("click", () => {
   sendMessageToAPI(userMessage); 
 });
 
-// Evento para clique no botão "Abraço"
 hugButton.addEventListener("click", () => {
   sendHug();
 });
 
-// Evento para clique no botão "Limpar Chat"
 clearButton.addEventListener("click", () => {
   clearChatHistory();
 });
 
-// Evento para pressionar a tecla Enter
 userInput.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
     sendButton.click(); 
