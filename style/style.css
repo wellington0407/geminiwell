@@ -44,22 +44,22 @@ body {
 }
 
 #hug-button {
-    background-color: #f44336; /* Cor de fundo chamativa (ex: vermelho) */
+    background-color: #f44336; 
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transições suaves */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
 
 #hug-button:hover {
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adiciona uma sombra */
+    transform: scale(1.1); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
 }
 
 #hug-button:active {
-    transform: scale(0.95); /* Diminui o tamanho ao clicar */
+    transform: scale(0.95); 
 }
 footer {
     text-align: center;
