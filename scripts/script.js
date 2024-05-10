@@ -40,7 +40,14 @@ function sendMessageToAPI(message) {
 function displayMessage(message, type) {
   const messageElement = document.createElement("div");
   messageElement.classList.add("message", type);
-  messageElement.textContent = message;
+
+  const lines = message.split("\n");
+  lines.forEach(line => {
+    const lineElement = document.createElement("p");
+    lineElement.textContent = line;
+    messageElement.appendChild(lineElement);
+  });
+
   chatHistory.appendChild(messageElement);
   chatHistory.scrollTop = chatHistory.scrollHeight; 
 }
