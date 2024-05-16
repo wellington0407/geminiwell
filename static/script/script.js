@@ -1,4 +1,4 @@
-var ws = new WebSocket("ws://" + window.location.host + "/ws");
+var ws = new WebSocket("wss://" + window.location.host + "/ws");
 
 ws.onmessage = function(event) {
     var chatHistory = document.getElementById("chat-history");
