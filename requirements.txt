@@ -35,7 +35,7 @@ tenacity==8.3.0
 typing_extensions==4.11.0
 tzdata==2024.1
 urllib3==2.2.1
-uvicorn==0.15.0
+uvicorn
 Werkzeug==3.0.3
 zipp==3.18.1
 zstandard==0.22.0
