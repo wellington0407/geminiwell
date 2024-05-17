@@ -31,7 +31,7 @@ async def websocket_endpoint(websocket: WebSocket):
             data = await websocket.receive_text()
             if data.strip():
                 prompt = f"""
-                Aborde essa pergunta em um texto curtos de no maximo 5 linhas com a sensibilidade de uma terapeuta ou psicóloga, faça parecer uma conversa, sempre tente iniciar com uma saudação.
+                Aborde essa pergunta em um texto curtos de no maximo 5 linhas com a sensibilidade de uma terapeuta ou psicóloga, faça parecer uma conversa.
                 Segue a pergunta: {data}.          
                 """
                 response = model.generate_content(prompt)
